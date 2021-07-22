@@ -25,7 +25,7 @@ public class Player : MonoBehaviour
     private void Awake()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
-        ChangeBody(1);
+        ChangeBody(Body.Instance.GetType());
     }
 
     void Start()

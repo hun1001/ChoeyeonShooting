@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Body : MonoBehaviour
+public class Body : MonoSingleton<Body>
 {
-    int type = 0;
+    private int type = 0;
     private SpriteRenderer spriteRenderer = null;
 
     [SerializeField]
@@ -23,6 +23,11 @@ public class Body : MonoBehaviour
             type = 0;
         }
         spriteRenderer.sprite = sprite[type];
+    }
+
+    public new int GetType()
+    {
+        return type;
     }
 
 }
