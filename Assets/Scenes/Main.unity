@@ -443,13 +443,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 1763559993}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 467f53429977c294c830494507bd00cc, type: 3}
+  m_Script: {fileID: 11500000, guid: c17b1769628e05b4998ffb2479195c83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponType: 0
   bulletPrefab:
   - {fileID: 6490898371657529996, guid: 6b5d00c09168c6a40b455f064607ad83, type: 3}
   bulletPosition: {fileID: 1763559994}
+  weaponImg:
+  - {fileID: 21300000, guid: adf2ab2e128326245bd2af4724d714aa, type: 3}
+  - {fileID: 21300000, guid: 59990a556a7db434e8b752b4aa53279d, type: 3}
+  - {fileID: 21300000, guid: 3dc738594b723c04491ace6e146e3e14, type: 3}
 --- !u!212 &1763559996
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -637,10 +640,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 2075338574}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 467f53429977c294c830494507bd00cc, type: 3}
+  m_Script: {fileID: 11500000, guid: a1b29042bd9292d46b5042e980309826, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponType: 0
   bulletPrefab:
   - {fileID: 6490898371657529996, guid: 6b5d00c09168c6a40b455f064607ad83, type: 3}
   bulletPosition: {fileID: 2075338575}
+  weaponImg:
+  - {fileID: 21300000, guid: adf2ab2e128326245bd2af4724d714aa, type: 3}
+  - {fileID: 21300000, guid: 59990a556a7db434e8b752b4aa53279d, type: 3}
+  - {fileID: 21300000, guid: 3dc738594b723c04491ace6e146e3e14, type: 3}

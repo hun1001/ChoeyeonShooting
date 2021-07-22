@@ -2,20 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Body : MonoSingleton<Body>
+public class ChangeImage : MonoBehaviour
 {
-    private int type = 0;
-    private SpriteRenderer spriteRenderer = null;
+    protected int type = 0;
+    protected SpriteRenderer spriteRenderer = null;
 
     [SerializeField]
-    private Sprite[] sprite = null;
+    protected Sprite[] sprite = null;
 
-    private void Awake()
+    protected void Awake()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
-    public void ChangeBody()
+    public void ChangeImg()
     {
         type++;
         if (type > 2)

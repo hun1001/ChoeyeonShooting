@@ -10,7 +10,7 @@ public class TitleManager : MonoBehaviour
 
     public void RepairShop()
     {
-
+        
     }
 
     public void ExitGame()

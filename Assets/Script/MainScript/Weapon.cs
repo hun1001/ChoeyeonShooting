@@ -4,23 +4,22 @@ using UnityEngine;
 
 public class Weapon : MonoBehaviour
 {
-    [SerializeField]
-    private int weaponType = 0;
+    protected int weaponType = 0;
 
     [SerializeField]
-    private GameObject[] bulletPrefab = null;
+    protected GameObject[] bulletPrefab = null;
 
     [SerializeField]
-    private Transform bulletPosition = null;
+    protected Transform bulletPosition = null;
 
-    void Start()
+    protected SpriteRenderer spriteRenderer = null;
+
+    [SerializeField]
+    protected Sprite[] weaponImg = null;
+
+    protected virtual void Start()
     {
         StartCoroutine(Fire());
-    }
-
-    void Update()
-    {
-        
     }
 
     private IEnumerator Fire()
@@ -33,4 +32,6 @@ public class Weapon : MonoBehaviour
             yield return new WaitForSeconds(0.5f);
         }
     }
+
+    
 }
