@@ -1,18 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Pool;
-using System;
 
-public class BulletMove : MonoBehaviour, IResettable
+public class BulletMove : MonoBehaviour
 {
-    public EventHandler Death;
     protected float speed = 1.57f;
 
-    public void Reset()
-    {
-        
-    }
 
     void Start()
     {
