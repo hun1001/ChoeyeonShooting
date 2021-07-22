@@ -7,12 +7,12 @@ public class BulletMove : MonoBehaviour
     protected float speed = 1.57f;
 
 
-    void Start()
+    protected void Start()
     {
         
     }
 
-    void Update()
+    protected void Update()
     {
         transform.Translate(Vector2.up * speed * Time.deltaTime);
         CheckLimit();

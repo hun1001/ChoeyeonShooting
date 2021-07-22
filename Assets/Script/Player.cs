@@ -8,9 +8,15 @@ public class Player : MonoBehaviour
     [SerializeField]
     private float speed = 15.7f;
 
+    [SerializeField]
+    private GameObject[] bulletPrefab = null;
+
+    [SerializeField]
+    private Transform bulletPosition = null;
+
     void Start()
     {
-        
+        StartCoroutine(Fire());
     }
 
     void Update()
@@ -21,6 +27,17 @@ public class Player : MonoBehaviour
             targetPosition.x = Mathf.Clamp(targetPosition.x, GameManager.Instance.minPosition.x, GameManager.Instance.maxPosition.x);
             targetPosition.y = Mathf.Clamp(targetPosition.y, GameManager.Instance.minPosition.y, GameManager.Instance.maxPosition.y);
             transform.localPosition = Vector2.MoveTowards(transform.localPosition, targetPosition, speed * Time.deltaTime);
+        }
+    }
+
+    private IEnumerator Fire()
+    {
+        while (true)
+        {
+            GameObject bullet = null;
+            bullet = Instantiate(bulletPrefab[0], bulletPosition);
+            bullet.transform.SetParent(null);
+            yield return new WaitForSeconds(0.5f);
         }
     }
 }
