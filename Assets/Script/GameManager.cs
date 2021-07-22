@@ -6,6 +6,10 @@ public class GameManager : MonoSingleton<GameManager>
 {
     public Vector2 maxPosition { get; private set; }
     public Vector2 minPosition { get; private set; }
+
+    [SerializeField]
+    private GameObject[] enemy = null;
+
     void Start()
     {
         maxPosition = new Vector2(2.5f, 4.5f);
@@ -16,5 +20,35 @@ public class GameManager : MonoSingleton<GameManager>
     void Update()
     {
         
+    }
+
+    private IEnumerator SpawnEnemyTypeA()
+    {
+        yield return new WaitForSeconds(1.57f);
+    }
+
+    private IEnumerator SpawnEnemyTypeB()
+    {
+        yield return new WaitForSeconds(1.57f);
+    }
+
+    private IEnumerator SpawnEnemyTypeC()
+    {
+        yield return new WaitForSeconds(1.57f);
+    }
+
+    private void SpawnEnemyA()
+    {
+
+    }
+
+    private void SpawnEnemyB()
+    {
+
+    }
+
+    private void SpawnEnemyC()
+    {
+
     }
 }
