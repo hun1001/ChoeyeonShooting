@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    [SerializeField]
+    private int playerType = 0; // 일단 임시 나중에 지울거 같은 변수
+
     private Vector2 targetPosition = Vector2.zero;
     [SerializeField]
     private float speed = 15.7f;
@@ -13,6 +16,17 @@ public class Player : MonoBehaviour
 
     [SerializeField]
     private Transform bulletPosition = null;
+
+    private SpriteRenderer spriteRenderer = null;
+
+    [SerializeField]
+    private Sprite[] sprite = null;
+
+    private void Awake()
+    {
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        ChangeBody(1);
+    }
 
     void Start()
     {
@@ -39,5 +53,10 @@ public class Player : MonoBehaviour
             bullet.transform.SetParent(null);
             yield return new WaitForSeconds(0.5f);
         }
+    }
+
+    public void ChangeBody(int type)
+    {
+        spriteRenderer.sprite = sprite[type];
     }
 }

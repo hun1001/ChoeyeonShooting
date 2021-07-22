@@ -12,15 +12,11 @@ public class GameManager : MonoSingleton<GameManager>
 
     void Start()
     {
-        maxPosition = new Vector2(2.5f, 4.5f);
-        minPosition = new Vector2(-2.5f, -4.5f);
+        maxPosition = new Vector2(5f, 9f);
+        minPosition = new Vector2(-5f, -9f);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+
 
     private IEnumerator SpawnEnemyTypeA()
     {
