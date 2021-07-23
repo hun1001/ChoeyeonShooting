@@ -53,7 +53,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 832b6b63ccac61e4aa7ea7299ab8945f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -138,3 +138,4 @@ MonoBehaviour:
   hp: 100
   itemPref: {fileID: 7921702677257509965, guid: 1f669025777153a4685a2e701f9a7ff4, type: 3}
   addScore: 200
+  clipDead: {fileID: 8300000, guid: f573068cc1bdb57438c801635615cb82, type: 3}

@@ -53,7 +53,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 832b6b63ccac61e4aa7ea7299ab8945f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -138,5 +138,7 @@ MonoBehaviour:
   hp: 3
   itemPref: {fileID: 2838756624175143809, guid: 7c28de7caacde484a90236f6db45b6e2, type: 3}
   addScore: 200
+  clipDead: {fileID: 8300000, guid: f573068cc1bdb57438c801635615cb82, type: 3}
   bulletPrefab: {fileID: 3589438567157354456, guid: 3a77343c2120bc5449b9a72ec0ec4b98, type: 3}
   bulletDelay: 0.157
+  fireClip: {fileID: 8300000, guid: cc7cbe5442787ba4db382aa894a3634a, type: 3}

@@ -17,6 +17,9 @@ public class Enemy2Move : EnemyMove
     private Player player = null;
     private GameManager gameManager = null;
 
+    [SerializeField]
+    private AudioClip fireClip;
+
     private void Start()
     {
         gameManager = FindObjectOfType<GameManager>();
@@ -32,6 +35,7 @@ public class Enemy2Move : EnemyMove
         {
             timer = 0f;
             //총알 생성
+            MainSoundManager.Instance.SFXPlay("9 적 총알 발싸 히히", fireClip);
             newBullet = Instantiate(bulletPrefab);
             newBullet.transform.position = new Vector2(transform.position.x, transform.position.y - 1);
             //플레이어 목표

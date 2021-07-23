@@ -47,7 +47,7 @@ public class GameManager : MonoSingleton<GameManager>
             GameObject a = null;
             a = Instantiate(enemy[1], new Vector2(6, rand), Quaternion.identity);
             a.transform.SetParent(null);
-            yield return new WaitForSeconds(1.57f);
+            yield return new WaitForSeconds(3.157f);
         }
     }
 
@@ -60,7 +60,7 @@ public class GameManager : MonoSingleton<GameManager>
             GameObject a = null;
             a = Instantiate(enemy[2], new Vector2(rand, 11), Quaternion.identity);
             a.transform.SetParent(null);
-            yield return new WaitForSeconds(1.57f);
+            yield return new WaitForSeconds(5.157f);
         }
     }
 
