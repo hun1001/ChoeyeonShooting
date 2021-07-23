@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class Weapon : MonoBehaviour
 {
-    protected int weaponType = 0;
-
+    protected int type = 0;
     [SerializeField]
     protected GameObject[] bulletPrefab = null;
 
@@ -19,6 +18,7 @@ public class Weapon : MonoBehaviour
 
     protected virtual void Start()
     {
+        spriteRenderer = GetComponent<SpriteRenderer>();
         StartCoroutine(Fire());
     }
 
@@ -27,11 +27,14 @@ public class Weapon : MonoBehaviour
         while (true)
         {
             GameObject bullet = null;
-            bullet = Instantiate(bulletPrefab[weaponType], bulletPosition);
+            bullet = Instantiate(bulletPrefab[type], bulletPosition);
             bullet.transform.SetParent(null);
             yield return new WaitForSeconds(0.5f);
         }
     }
 
-    
+    protected virtual void ChangeImg(int i)
+    {
+        spriteRenderer.sprite = weaponImg[i];
+    }
 }

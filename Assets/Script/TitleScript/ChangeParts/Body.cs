@@ -4,9 +4,17 @@ using UnityEngine;
 
 public class Body : ChangeImage
 {
-    void Awake()
+    public static int bodyType;
+    private Player player = null;
+    new void Awake()
     {
         base.Awake();
+        player = FindObjectOfType<Player>();
+    }
+    protected override void ChangeImg()
+    {
+        base.ChangeImg();
+        bodyType = type;
     }
 
 }

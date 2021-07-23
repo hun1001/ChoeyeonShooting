@@ -7,8 +7,8 @@ public class GameManager : MonoSingleton<GameManager>
     public Vector2 maxPosition { get; private set; }
     public Vector2 minPosition { get; private set; }
 
-    [SerializeField]
-    private GameObject[] enemy = null;
+    //[SerializeField]
+    //private GameObject[] enemy = null;
 
     void Start()
     {

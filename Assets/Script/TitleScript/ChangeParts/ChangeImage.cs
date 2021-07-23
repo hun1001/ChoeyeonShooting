@@ -15,7 +15,7 @@ public class ChangeImage : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
-    public void ChangeImg()
+    protected virtual void ChangeImg()
     {
         type++;
         if (type > 2)
@@ -25,9 +25,5 @@ public class ChangeImage : MonoBehaviour
         spriteRenderer.sprite = sprite[type];
     }
 
-    public new int GetType()
-    {
-        return type;
-    }
 
 }
