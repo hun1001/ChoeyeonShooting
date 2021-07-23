@@ -1718,12 +1718,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1023454508}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4509374a45bd0ab48a706e5a20468bba, type: 3}
+  m_Script: {fileID: 11500000, guid: 72a81f644a9bbcb4485ef95fed3f0fb0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scraptText: {fileID: 1726721195}
-  gunPowerText: {fileID: 31521256}
-  engineText: {fileID: 1377830233}
+  text:
+  - {fileID: 1726721195}
+  - {fileID: 31521256}
+  - {fileID: 1377830233}
 --- !u!4 &1023454510
 Transform:
   m_ObjectHideFlags: 0
@@ -2801,7 +2802,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -2964,7 +2965,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1823323719
 MonoBehaviour:
   m_ObjectHideFlags: 0

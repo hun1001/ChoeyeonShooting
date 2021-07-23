@@ -10,10 +10,8 @@ public class EnemyMove : MonoBehaviour
     private int hp = 3;
     private bool isDead = false;
 
-    void Start()
-    {
-    }
-
+    [SerializeField]
+    protected GameObject itemPref = null;
 
     private void Update()
     {
@@ -54,5 +52,11 @@ public class EnemyMove : MonoBehaviour
                 Destroy(gameObject);
             }
         }
+    }
+
+    protected virtual void GiveItem()
+    {
+        GameObject item = null;
+        item = Instantiate(itemPref, gameObject.transform.position, Quaternion.identity);
     }
 }

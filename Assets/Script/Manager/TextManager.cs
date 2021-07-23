@@ -8,7 +8,7 @@ public class TextManager : MonoSingleton<TextManager>
 
     private int[] figure = new int[3];
 
-    private void Start()
+    protected void Start()
     {
         for (int i = 0; i < 3; i++)
         {
