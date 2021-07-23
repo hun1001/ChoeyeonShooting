@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    [SerializeField]
-    private int playerType = 0; // 일단 임시 나중에 지울거 같은 변수
 
     private Vector2 targetPosition = Vector2.zero;
     [SerializeField]
@@ -30,6 +28,7 @@ public class Player : MonoBehaviour
     void Start()
     {
         StartCoroutine(Fire());
+        ChangeBody(Body.bodyType);
     }
 
     void Update()

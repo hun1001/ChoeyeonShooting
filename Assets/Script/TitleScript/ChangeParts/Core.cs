@@ -2,17 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WeaponA : ChangeImage
+public class Core : ChangeImage
 {
-    public static int wpAType;
-    void Awake()
+
+    public static int bodyType;
+    new void Awake()
     {
         base.Awake();
     }
     protected override void ChangeImg()
     {
         base.ChangeImg();
-        wpAType = type;
+        bodyType = type;
     }
-
 }

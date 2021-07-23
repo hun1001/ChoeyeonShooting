@@ -4,9 +4,15 @@ using UnityEngine;
 
 public class Body : ChangeImage
 {
-    void Awake()
+    public static int bodyType;
+    new void Awake()
     {
         base.Awake();
+    }
+    protected override void ChangeImg()
+    {
+        base.ChangeImg();
+        bodyType = type;
     }
 
 }
