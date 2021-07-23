@@ -17,7 +17,11 @@ public class ItemMove : MonoBehaviour
     protected virtual void Update()
     {
         transform.Translate(Vector2.down * speed * Time.deltaTime);
-        Addres(index, value);
+        if (isDead == true)
+        {
+            Addres(index, value);
+            MainTextManager.Instance.AddValue(2, value);
+        }
     }
 
     protected virtual void OnTriggerEnter2D(Collider2D collision)

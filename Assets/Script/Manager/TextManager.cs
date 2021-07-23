@@ -28,4 +28,11 @@ public class TextManager : MonoSingleton<TextManager>
         UpdateUI(i, figure[i]);
     }
 
+    public void AddValue(int i,int add)
+    {
+        figure[i] = figure[i] + add;
+        PlayerPrefs.SetInt("CYS" + i, figure[i]);
+        UpdateUI(i, figure[i]);
+    }
+
 }

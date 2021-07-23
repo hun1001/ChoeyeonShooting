@@ -746,6 +746,8 @@ MonoBehaviour:
   speed: 15.7
   bulletPrefab:
   - {fileID: 6490898371657529996, guid: 6b5d00c09168c6a40b455f064607ad83, type: 3}
+  - {fileID: 6490898371657529996, guid: 6b5d00c09168c6a40b455f064607ad83, type: 3}
+  - {fileID: 6490898371657529996, guid: 6b5d00c09168c6a40b455f064607ad83, type: 3}
   bulletPosition: {fileID: 1545275226}
   sprite:
   - {fileID: 21300000, guid: 62a7bf55fba8a6141ab69b9387fba3d0, type: 3}
@@ -1447,7 +1449,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPrefab:
   - {fileID: 6490898371657529996, guid: 6b5d00c09168c6a40b455f064607ad83, type: 3}
-  - {fileID: 6490898371657529996, guid: 6b5d00c09168c6a40b455f064607ad83, type: 3}
+  - {fileID: 7276451753153959263, guid: 634be2c8bcc30294b85968b45a372a11, type: 3}
   - {fileID: 6490898371657529996, guid: 6b5d00c09168c6a40b455f064607ad83, type: 3}
   bulletPosition: {fileID: 2075338575}
   weaponImg:
