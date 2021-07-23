@@ -59,19 +59,4 @@ public class GameManager : MonoSingleton<GameManager>
             yield return new WaitForSeconds(1.57f);
         }
     }
-
-    private void SpawnEnemyA()
-    {
-
-    }
-
-    private void SpawnEnemyB()
-    {
-
-    }
-
-    private void SpawnEnemyC()
-    {
-
-    }
 }

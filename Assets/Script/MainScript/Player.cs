@@ -72,7 +72,9 @@ public class Player : MonoSingleton<Player>
             hp -= damage;
             if (hp < 1)
             {
-                Destroy(gameObject);
+                spriteRenderer.enabled = false;
+                GameOver();
+                //여기다가 애니매이션 추가 폭발하는 애니매이션
             }
             for (int i = 0; i < 3; i++)
             {
@@ -92,5 +94,10 @@ public class Player : MonoSingleton<Player>
         {
             StartCoroutine(Damaged(20)); // 여기부분 수정해야됨
         }
+    }
+
+    void GameOver()
+    {
+
     }
 }

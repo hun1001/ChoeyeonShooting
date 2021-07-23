@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Weapon : MonoBehaviour
+public class Weapon : MonoSingleton<Weapon>
 {
     protected int type = 0;
     [SerializeField]
@@ -36,5 +36,11 @@ public class Weapon : MonoBehaviour
     protected virtual void ChangeImg(int i)
     {
         spriteRenderer.sprite = weaponImg[i];
+    }
+
+    public void Dead()
+    {
+        gameObject.SetActive(false);
+        spriteRenderer.enabled = false;
     }
 }
