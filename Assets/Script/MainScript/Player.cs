@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MonoBehaviour
+public class Player : MonoSingleton<Player>
 {
 
     private Vector2 targetPosition = Vector2.zero;
@@ -19,6 +19,11 @@ public class Player : MonoBehaviour
 
     [SerializeField]
     private Sprite[] sprite = null;
+
+    [SerializeField]
+    private int hp = 100;
+
+    private bool isDamaged = false;
 
     private void Awake()
     {
@@ -57,5 +62,29 @@ public class Player : MonoBehaviour
     public void ChangeBody(int type)
     {
         spriteRenderer.sprite = sprite[type];
+    }
+
+    public IEnumerator Damaged(int damage)
+    {
+        if (!isDamaged)
+        {
+            isDamaged = true;
+            hp -= damage;
+            if (hp < 1)
+            {
+                Destroy(gameObject);
+            }
+            yield return new WaitForSeconds(0.157f);
+            isDamaged = false;
+        }
+
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Enemy"))
+        {
+            StartCoroutine(Damaged(3)); // 여기부분 수정해야됨
+        }
     }
 }
