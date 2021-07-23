@@ -74,7 +74,13 @@ public class Player : MonoSingleton<Player>
             {
                 Destroy(gameObject);
             }
-            yield return new WaitForSeconds(0.157f);
+            for (int i = 0; i < 3; i++)
+            {
+                spriteRenderer.enabled = false;
+                yield return new WaitForSeconds(0.157f);
+                spriteRenderer.enabled = true;
+                yield return new WaitForSeconds(0.157f);
+            }
             isDamaged = false;
         }
 
