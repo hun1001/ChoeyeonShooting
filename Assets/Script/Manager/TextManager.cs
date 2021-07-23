@@ -6,7 +6,7 @@ public class TextManager : MonoSingleton<TextManager>
     [SerializeField]
     private Text[] text = null;
 
-    private int[] figure = new int[3];
+    private int[] figure = new int[3]; // 책읽은 순서대로
 
     protected void Start()
     {

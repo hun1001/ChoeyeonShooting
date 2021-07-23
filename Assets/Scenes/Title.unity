@@ -445,8 +445,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sprite:
-  - {fileID: 21300000, guid: 7a5a2e44fbd5a864c9c93d153579371c, type: 3}
   - {fileID: 21300000, guid: 62a7bf55fba8a6141ab69b9387fba3d0, type: 3}
+  - {fileID: 21300000, guid: 7a5a2e44fbd5a864c9c93d153579371c, type: 3}
   - {fileID: 21300000, guid: 59d200f9b068eeb46b6ff1ce69a86ad1, type: 3}
 --- !u!212 &59271709
 SpriteRenderer:
@@ -488,7 +488,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 7a5a2e44fbd5a864c9c93d153579371c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 62a7bf55fba8a6141ab69b9387fba3d0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1105,8 +1105,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67567292c30183e43a434e6b6a16824c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  title: {fileID: 0}
-  repair: {fileID: 0}
+  title: {fileID: 1823323718}
+  repair: {fileID: 1537935089}
 --- !u!1 &617153192
 GameObject:
   m_ObjectHideFlags: 0
@@ -2423,8 +2423,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sprite:
-  - {fileID: 21300000, guid: adf2ab2e128326245bd2af4724d714aa, type: 3}
   - {fileID: 21300000, guid: 59990a556a7db434e8b752b4aa53279d, type: 3}
+  - {fileID: 21300000, guid: adf2ab2e128326245bd2af4724d714aa, type: 3}
   - {fileID: 21300000, guid: 3dc738594b723c04491ace6e146e3e14, type: 3}
 --- !u!212 &1486789072
 SpriteRenderer:
@@ -2466,7 +2466,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: adf2ab2e128326245bd2af4724d714aa, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 59990a556a7db434e8b752b4aa53279d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2841,7 +2841,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1801997667}
   - component: {fileID: 1801997669}
-  - component: {fileID: 1801997668}
   - component: {fileID: 1801997670}
   m_Layer: 0
   m_Name: weapon2
@@ -2864,22 +2863,6 @@ Transform:
   m_Father: {fileID: 59271710}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1801997668
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1801997666}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 74c7f83ab2d5d9e4a80844f19f1c312f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sprite:
-  - {fileID: 21300000, guid: adf2ab2e128326245bd2af4724d714aa, type: 3}
-  - {fileID: 21300000, guid: 59990a556a7db434e8b752b4aa53279d, type: 3}
-  - {fileID: 21300000, guid: 3dc738594b723c04491ace6e146e3e14, type: 3}
 --- !u!212 &1801997669
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2920,7 +2903,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: adf2ab2e128326245bd2af4724d714aa, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 59990a556a7db434e8b752b4aa53279d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2944,8 +2927,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sprite:
-  - {fileID: 21300000, guid: adf2ab2e128326245bd2af4724d714aa, type: 3}
   - {fileID: 21300000, guid: 59990a556a7db434e8b752b4aa53279d, type: 3}
+  - {fileID: 21300000, guid: adf2ab2e128326245bd2af4724d714aa, type: 3}
   - {fileID: 21300000, guid: 3dc738594b723c04491ace6e146e3e14, type: 3}
 --- !u!1 &1823323718
 GameObject:

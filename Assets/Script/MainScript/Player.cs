@@ -23,6 +23,9 @@ public class Player : MonoSingleton<Player>
     [SerializeField]
     private int hp = 100;
 
+    [SerializeField]
+    private int item = 0;
+
     private bool isDamaged = false;
 
     private void Awake()
@@ -34,6 +37,9 @@ public class Player : MonoSingleton<Player>
     {
         StartCoroutine(Fire());
         ChangeBody(Body.bodyType);
+        hp = (Body.bodyType + 1) * 100;
+        MainTextManager.Instance.SetValue(0, hp);
+        MainTextManager.Instance.SetValue(2, item);
     }
 
     void Update()
@@ -70,6 +76,7 @@ public class Player : MonoSingleton<Player>
         {
             isDamaged = true;
             hp -= damage;
+            MainTextManager.Instance.SetValue(0, hp);
             if (hp < 1)
             {
                 spriteRenderer.enabled = false;
