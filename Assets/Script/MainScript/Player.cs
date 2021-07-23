@@ -48,6 +48,7 @@ public class Player : MonoBehaviour
         {
             GameObject bullet = null;
             bullet = Instantiate(bulletPrefab[0], bulletPosition);
+            bullet.transform.localScale = new Vector3(1.4f, 1.4f, 1);
             bullet.transform.SetParent(null);
             yield return new WaitForSeconds(0.5f);
         }

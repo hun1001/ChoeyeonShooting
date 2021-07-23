@@ -7,8 +7,8 @@ public class GameManager : MonoSingleton<GameManager>
     public Vector2 maxPosition { get; private set; }
     public Vector2 minPosition { get; private set; }
 
-    //[SerializeField]
-    //private GameObject[] enemy = null;
+    [SerializeField]
+    private GameObject[] enemy = null;
 
     void Start()
     {
@@ -38,7 +38,7 @@ public class GameManager : MonoSingleton<GameManager>
         float rand;
         while (true)
         {
-            rand = Random.Range(9, -9);
+            rand = Random.Range(9, 2);
             GameObject a = null;
             a = Instantiate(enemy[1], new Vector2(6, rand), Quaternion.identity);
             a.transform.SetParent(null);

@@ -4,33 +4,49 @@ using UnityEngine;
 
 public class Enemy2Move : EnemyMove
 {
-    Player player = null;
     [SerializeField]
-    GameObject bullet = null;
-    void Start()
+    private GameObject bulletPrefab;
+    [SerializeField]
+    private float bulletDelay = 0.5f;
+
+    private float timer = 0f;
+    private Vector3 diff = Vector3.zero;
+    private float rotationZ = 0f;
+
+    private GameObject newBullet = null;
+    private Player player = null;
+    private GameManager gameManager = null;
+
+    private void Start()
     {
+        gameManager = FindObjectOfType<GameManager>();
         player = FindObjectOfType<Player>();
-        StartCoroutine(attack());
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
         transform.Translate(Vector2.left * speed * Time.deltaTime);
-        base.CheckLimit();
-    }
 
-    private IEnumerator attack()
-    {
-        Vector3 pos;
-        yield return new WaitForSeconds(1.2f);
-        while(true)
+        timer += Time.deltaTime;
+        if (timer >= bulletDelay)
         {
-            pos = player.transform.position;
-            Instantiate(bullet, gameObject.transform.position, Quaternion.LookRotation(pos));
-            bullet.transform.SetParent(null);
+            timer = 0f;
+            //총알 생성
+            newBullet = Instantiate(bulletPrefab);
+            newBullet.transform.position = new Vector3(transform.position.x, transform.position.y - 1, transform.position.z);
+            //플레이어 목표
+            diff = transform.position - player.transform.position;
+            diff.Normalize();
+            rotationZ = Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg;
+            newBullet.transform.rotation = Quaternion.Euler(0f, 0f, rotationZ + 90f);
 
+            //부모 제거
+            newBullet.transform.SetParent(null);
         }
 
+        if (gameObject.transform.position.x <= gameManager.minPosition.x - 2f)
+        {
+            Destroy(gameObject);
+        }
     }
 }
