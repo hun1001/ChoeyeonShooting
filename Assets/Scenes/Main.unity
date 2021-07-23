@@ -539,7 +539,7 @@ MonoBehaviour:
   enemy:
   - {fileID: 4803271517820362887, guid: 257d0879ada3b45469804b59f8a7ec84, type: 3}
   - {fileID: 3931285311832023795, guid: 38f97da6d9739ae47a71287d9d897d53, type: 3}
-  - {fileID: 0}
+  - {fileID: 4317603547120220658, guid: 66841aec319063e4a84e9e500a0b8a16, type: 3}
 --- !u!4 &1777228745
 Transform:
   m_ObjectHideFlags: 0

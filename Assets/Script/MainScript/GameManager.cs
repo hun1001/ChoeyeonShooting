@@ -16,6 +16,7 @@ public class GameManager : MonoSingleton<GameManager>
         minPosition = new Vector2(-5f, -9f);
         StartCoroutine(SpawnEnemyTypeA());
         StartCoroutine(SpawnEnemyTypeB());
+        StartCoroutine(SpawnEnemyTypeC());
     }
 
 
@@ -48,7 +49,15 @@ public class GameManager : MonoSingleton<GameManager>
 
     private IEnumerator SpawnEnemyTypeC()
     {
-        yield return new WaitForSeconds(1.57f);
+        float rand;
+        while (true)
+        {
+            rand = Random.Range(5, -5);
+            GameObject a = null;
+            a = Instantiate(enemy[2], new Vector2(rand, 11), Quaternion.identity);
+            a.transform.SetParent(null);
+            yield return new WaitForSeconds(1.57f);
+        }
     }
 
     private void SpawnEnemyA()

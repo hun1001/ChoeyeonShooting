@@ -90,7 +90,7 @@ public class Player : MonoSingleton<Player>
     {
         if (collision.CompareTag("Enemy"))
         {
-            StartCoroutine(Damaged(3)); // 여기부분 수정해야됨
+            StartCoroutine(Damaged(20)); // 여기부분 수정해야됨
         }
     }
 }
