@@ -2,8 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Body : ChangeImage
+public class Core : ChangeImage
 {
+
     public static int bodyType;
     new void Awake()
     {
@@ -14,5 +15,4 @@ public class Body : ChangeImage
         base.ChangeImg();
         bodyType = type;
     }
-
 }
