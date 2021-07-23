@@ -10,8 +10,12 @@ public class GameManager : MonoSingleton<GameManager>
     [SerializeField]
     private GameObject[] enemy = null;
 
+    [SerializeField]
+    private int score = 0;
+
     void Start()
     {
+        MainTextManager.Instance.SetValue(1, score);
         maxPosition = new Vector2(5f, 9f);
         minPosition = new Vector2(-5f, -9f);
         StartCoroutine(SpawnEnemyTypeA());
@@ -58,5 +62,11 @@ public class GameManager : MonoSingleton<GameManager>
             a.transform.SetParent(null);
             yield return new WaitForSeconds(1.57f);
         }
+    }
+
+    public void AddScore(int add)
+    {
+        score += add;
+        MainTextManager.Instance.SetValue(1, score);
     }
 }

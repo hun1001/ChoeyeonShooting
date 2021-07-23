@@ -33,7 +33,7 @@ public class Enemy2Move : EnemyMove
             timer = 0f;
             //총알 생성
             newBullet = Instantiate(bulletPrefab);
-            newBullet.transform.position = new Vector3(transform.position.x, transform.position.y - 1, transform.position.z);
+            newBullet.transform.position = new Vector2(transform.position.x, transform.position.y - 1);
             //플레이어 목표
             diff = transform.position - player.transform.position;
             diff.Normalize();

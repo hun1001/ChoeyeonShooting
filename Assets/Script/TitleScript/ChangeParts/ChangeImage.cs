@@ -17,6 +17,7 @@ public class ChangeImage : MonoBehaviour
 
     protected virtual void ChangeImg()
     {
+        TitleSoundManager.Instance.PlaySoundOther();
         type++;
         if (type > 2)
         {

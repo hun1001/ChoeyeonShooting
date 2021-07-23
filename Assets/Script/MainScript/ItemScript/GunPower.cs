@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Scrapt : ItemMove
+public class GunPower : ItemMove
 {
     void Start()
     {

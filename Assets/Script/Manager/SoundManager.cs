@@ -4,13 +4,20 @@ using UnityEngine;
 
 public class SoundManager : MonoSingleton<SoundManager>
 {
+    public AudioClip exClip;
     public void SFXPlay(string sfxName, AudioClip clip)
     {
         GameObject go = new GameObject(sfxName + "Sound");
         AudioSource audioSource = go.AddComponent<AudioSource>();
         audioSource.clip = clip;
+        audioSource.volume = 0.3f; 
         audioSource.Play();
 
         Destroy(go, clip.length);
+    }
+
+    public void PlaySoundOther()
+    {
+        SFXPlay("Sound", exClip);
     }
 }

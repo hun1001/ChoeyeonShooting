@@ -4,15 +4,33 @@ using UnityEngine;
 
 public class ItemMove : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField]
+    private float speed = 3f;
+
+    private int[] res = new int[3]; // 이ㅓㄴ 나중에 따로 빼노야될듯
+
+    protected bool isDead = false;
+
+    protected int index = -1;
+    protected int value = 100;
+
+    protected virtual void Update()
     {
-        
+        transform.Translate(Vector2.down * speed * Time.deltaTime);
+        Addres(index, value);
     }
 
-    // Update is called once per frame
-    void Update()
+    protected virtual void OnTriggerEnter2D(Collider2D collision)
     {
-        
+        if (collision.CompareTag("Player"))
+        {
+            MainSoundManager.Instance.PlaySoundOther();
+            Destroy(gameObject);
+        }
+    }
+
+    protected void Addres(int i,int n)
+    {
+        res[i] += n;
     }
 }

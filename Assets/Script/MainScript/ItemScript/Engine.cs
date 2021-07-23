@@ -2,12 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Scrapt : ItemMove
+public class Engine : ItemMove
 {
     void Start()
     {
-        index = 0;
-        value = 100;
+        index = 2;
+        value = 10;
     }
 
     new void Update()

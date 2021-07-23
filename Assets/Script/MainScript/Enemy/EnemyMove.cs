@@ -13,6 +13,9 @@ public class EnemyMove : MonoBehaviour
     [SerializeField]
     protected GameObject itemPref = null;
 
+    [SerializeField]
+    protected int addScore = 200;
+
     private void Update()
     {
         transform.Translate(Vector2.down * speed * Time.deltaTime);
@@ -48,15 +51,19 @@ public class EnemyMove : MonoBehaviour
             hp--;
             if (hp <= 0)
             {
-                isDead = true;
-                Destroy(gameObject);
+                Dead();
             }
         }
     }
 
-    protected virtual void GiveItem()
+    protected virtual void Dead()
     {
         GameObject item = null;
+        isDead = true;
+        GameManager.Instance.AddScore(this.addScore);
+        Destroy(gameObject);
         item = Instantiate(itemPref, gameObject.transform.position, Quaternion.identity);
+        item.transform.position = new Vector2(transform.position.x, transform.position.y - 1); // 이거 아이템이 이상한데 스폰되는데 그거 고쳐야됨 버그 안고침
+        item.transform.SetParent(null);
     }
 }

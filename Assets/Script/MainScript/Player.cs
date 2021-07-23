@@ -1,6 +1,6 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoSingleton<Player>
 {
@@ -27,6 +27,8 @@ public class Player : MonoSingleton<Player>
     private int item = 0;
 
     private bool isDamaged = false;
+    [SerializeField]
+    private AudioClip[] clip;
 
     private void Awake()
     {
@@ -58,6 +60,7 @@ public class Player : MonoSingleton<Player>
         while (true)
         {
             GameObject bullet = null;
+            MainSoundManager.Instance.SFXPlay("4 딱총", clip[0]);
             bullet = Instantiate(bulletPrefab[0], bulletPosition);
             bullet.transform.localScale = new Vector3(1.4f, 1.4f, 1);
             bullet.transform.SetParent(null);
@@ -99,12 +102,14 @@ public class Player : MonoSingleton<Player>
     {
         if (collision.CompareTag("Enemy"))
         {
+            MainSoundManager.Instance.SFXPlay("5 플레이어 피격", clip[1]);
             StartCoroutine(Damaged(20)); // 여기부분 수정해야됨
         }
     }
 
     void GameOver()
     {
-
+        MainSoundManager.Instance.SFXPlay("7 플레이어 사망", clip[2]); // 이거 코루틴으로 해야될 듯
+        SceneManager.LoadScene("Title");
     }
 }

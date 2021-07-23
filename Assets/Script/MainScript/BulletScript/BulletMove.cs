@@ -6,12 +6,6 @@ public class BulletMove : MonoBehaviour
 {
     protected float speed = 10f;
 
-
-    protected void Start()
-    {
-        
-    }
-
     protected void Update()
     {
         transform.Translate(Vector2.up * speed * Time.deltaTime);
