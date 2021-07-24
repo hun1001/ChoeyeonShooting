@@ -6,7 +6,7 @@ public class Missile : BulletMove
 {
     protected void Start()
     {
-        speed = 3f; 
+        speed =10f; 
     }
 
     // Update is called once per frame

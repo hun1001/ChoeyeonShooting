@@ -40,7 +40,7 @@ public class Player : MonoSingleton<Player>
         StartCoroutine(Fire());
         ChangeBody(Body.bodyType);
         hp = (Body.bodyType + 1) * 100 + (WeaponA.wpAType + 1) * 5 + (WeaponB.wpBType + 1) * 5;
-        speed = ((3 - Body.bodyType) * 5) + ((3 - WeaponA.wpAType + 1) * 2) + ((3 - WeaponB.wpBType + 1) * 2);
+        speed = ((3 - Body.bodyType) * 2) + ((3 - WeaponA.wpAType + 1) * 2) + ((3 - WeaponB.wpBType + 1) * 2);
         MainTextManager.Instance.SetValue(0, hp);
         MainTextManager.Instance.SetValue(2, item);
     }

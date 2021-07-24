@@ -1351,6 +1351,68 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1240265236
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1240265238}
+  - component: {fileID: 1240265237}
+  m_Layer: 0
+  m_Name: PoolManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1240265237
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1240265236}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb1d0c090852a8248a0184fb08d8c561, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemy1P: {fileID: 4803271517820362887, guid: 257d0879ada3b45469804b59f8a7ec84, type: 3}
+  enemy2P: {fileID: 3931285311832023795, guid: 38f97da6d9739ae47a71287d9d897d53, type: 3}
+  enemy3P: {fileID: 4317603547120220658, guid: 66841aec319063e4a84e9e500a0b8a16, type: 3}
+  scrapP: {fileID: 0}
+  gunpowerP: {fileID: 0}
+  engineP: {fileID: 0}
+  playerbulletP: {fileID: 0}
+  rightbulletP: {fileID: 0}
+  leftbulletP: {fileID: 0}
+  enemy1: []
+  enemy2: []
+  enemy3: []
+  scrap: []
+  gunpower: []
+  engine: []
+  playerbullet: []
+  rightbullet: []
+  leftbullet: []
+  target: []
+--- !u!4 &1240265238
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1240265236}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 5.42, y: -0.03999996, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1269937152
 GameObject:
   m_ObjectHideFlags: 0

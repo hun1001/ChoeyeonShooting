@@ -21,6 +21,7 @@ public class EnemyMove : MonoBehaviour
 
     private SpriteRenderer spriteRenderer = null;
 
+    private GameObject bul = null;
     private void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -38,11 +39,11 @@ public class EnemyMove : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        if (transform.position.x < GameManager.Instance.minPosition.x-2)
+        if (transform.position.x < GameManager.Instance.minPosition.x - 2)
         {
             Destroy(gameObject);
         }
-        if (transform.position.x > GameManager.Instance.maxPosition.x+2)
+        if (transform.position.x > GameManager.Instance.maxPosition.x + 2)
         {
             Destroy(gameObject);
         }
@@ -54,12 +55,14 @@ public class EnemyMove : MonoBehaviour
         if (collision.gameObject.CompareTag("Bullet"))
         {
             BulletA bullet = collision.GetComponent<BulletA>();
+            bul = collision.gameObject;
             if (bullet != null)
             {
                 Destroy(bullet.gameObject);
             }
-        
-            hp--;
+
+            Bulletcheck();
+
             if (hp <= 0)
             {
                 Dead();
@@ -77,6 +80,22 @@ public class EnemyMove : MonoBehaviour
         item = Instantiate(itemPref, gameObject.transform.position, Quaternion.identity);
         item.transform.position = new Vector2(transform.position.x, transform.position.y - 1); // 이거 아이템이 이상한데 스폰되는데 그거 고쳐야됨 버그 안고침
         item.transform.SetParent(null);
+    }
+
+    protected virtual void Bulletcheck()
+    {
+        if (bul.name.Contains("BulletTypeA"))
+        {
+            hp -= 2;
+        }
+        else if (bul.name.Contains("laser_bullet_0"))
+        {
+            hp -= 6;
+        }
+        else if (bul.name.Contains("missile"))
+        {
+            hp -= 4;
+        }
     }
 
     //protected virtual void Damaged() // 일단 보류

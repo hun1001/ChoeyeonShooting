@@ -38,7 +38,7 @@ public class GameManager : MonoSingleton<GameManager>
             GameObject a = null;
             a = Instantiate(enemy[0], new Vector2(rand, 11), Quaternion.identity);
             a.transform.SetParent(null);
-            yield return new WaitForSeconds(1.57f);
+            yield return new WaitForSeconds(Random.Range(2f, 0.5f));
         }      
     }
 
@@ -51,7 +51,7 @@ public class GameManager : MonoSingleton<GameManager>
             GameObject a = null;
             a = Instantiate(enemy[1], new Vector2(6, rand), Quaternion.identity);
             a.transform.SetParent(null);
-            yield return new WaitForSeconds(3.157f);
+            yield return new WaitForSeconds(Random.Range(3.5f, 1f));
         }
     }
 
@@ -64,7 +64,7 @@ public class GameManager : MonoSingleton<GameManager>
             GameObject a = null;
             a = Instantiate(enemy[2], new Vector2(rand, 11), Quaternion.identity);
             a.transform.SetParent(null);
-            yield return new WaitForSeconds(5.157f);
+            yield return new WaitForSeconds(Random.Range(4f, 0.9f));
         }
     }
 
@@ -72,7 +72,7 @@ public class GameManager : MonoSingleton<GameManager>
     {
         if (isGameOver) return;
         score += add;
-        if (score > PlayerPrefs.GetInt("Best"))
+        if (score > bestScore)
         {
             PlayerPrefs.SetInt("Best", bestScore);
         }
@@ -81,12 +81,7 @@ public class GameManager : MonoSingleton<GameManager>
 
     public int GetScore()
     {
-        return score;
-    }
-
-    public int GetBestScore()
-    {
-        return bestScore;
+        return score + MainTextManager.Instance.GetValue(2);
     }
 
     public bool GetisGameOver()
