@@ -137,5 +137,5 @@ MonoBehaviour:
   speed: 5
   hp: 6
   itemPref: {fileID: 4249808072994885183, guid: 5f0a5796567ced2449bc5ae95b5c8ddd, type: 3}
-  addScore: 200
+  addScore: 150
   clipDead: {fileID: 8300000, guid: f573068cc1bdb57438c801635615cb82, type: 3}
