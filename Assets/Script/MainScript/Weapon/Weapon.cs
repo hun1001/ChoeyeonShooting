@@ -24,7 +24,7 @@ public class Weapon : MonoSingleton<Weapon>
 
     private IEnumerator Fire()
     {
-        while (true)
+        while (GameManager.Instance.GetisGameOver() == false)
         {
             GameObject bullet = null;
             bullet = Instantiate(bulletPrefab[type], bulletPosition);

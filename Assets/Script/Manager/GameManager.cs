@@ -13,8 +13,13 @@ public class GameManager : MonoSingleton<GameManager>
     [SerializeField]
     private int score = 0;
 
+    private int bestScore = 0;
+
+    private bool isGameOver = false;
+
     void Start()
     {
+        isGameOver = false;
         score = 0;
         MainTextManager.Instance.SetValue(1, score);
         maxPosition = new Vector2(5f, 9f);
@@ -67,10 +72,11 @@ public class GameManager : MonoSingleton<GameManager>
 
     public void AddScore(int add)
     {
+        if (isGameOver) return;
         score += add;
         if (score > PlayerPrefs.GetInt("Best"))
         {
-            PlayerPrefs.SetInt("Best", score);
+            PlayerPrefs.SetInt("Best", bestScore);
         }
         MainTextManager.Instance.SetValue(1, score);
     }
@@ -78,5 +84,20 @@ public class GameManager : MonoSingleton<GameManager>
     public int GetScore()
     {
         return score;
+    }
+
+    public int GetBestScore()
+    {
+        return bestScore;
+    }
+
+    public bool GetisGameOver()
+    {
+        return isGameOver;
+    }
+
+    public void SetisGameOver(bool b)
+    {
+        isGameOver = b;
     }
 }

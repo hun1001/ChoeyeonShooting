@@ -9,7 +9,6 @@ public class ItemMove : MonoBehaviour
 
     private int[] res = new int[3]; // 이ㅓㄴ 나중에 따로 빼노야될듯
 
-    protected bool isDead = false;
 
     protected int index = -1;
     protected int value = 100;
@@ -19,11 +18,7 @@ public class ItemMove : MonoBehaviour
     protected virtual void Update()
     {
         transform.Translate(Vector2.down * speed * Time.deltaTime);
-        if (isDead == true)
-        {
-            Addres(index, value);
-            MainTextManager.Instance.AddValue(2, h);
-        }
+        
     }
 
     protected virtual void OnTriggerEnter2D(Collider2D collision)
@@ -31,7 +26,8 @@ public class ItemMove : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             MainSoundManager.Instance.PlaySoundOther();
-            isDead = true;
+            Addres(index, value);
+            MainTextManager.Instance.AddValue(2, h);
             Destroy(gameObject);
         }
     }
