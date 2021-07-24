@@ -29,8 +29,6 @@ public class GameManager : MonoSingleton<GameManager>
         StartCoroutine(SpawnEnemyTypeC());
     }
 
-
-
     private IEnumerator SpawnEnemyTypeA()
     {
         float rand;

@@ -19,6 +19,9 @@ public class TitleManager : MonoSingleton<TitleManager>
     {
         title.SetActive(true);
         repair.SetActive(false);
+        TitleTextManager.Instance.SetValue(0, 999);
+        TitleTextManager.Instance.SetValue(1, 999);
+        TitleTextManager.Instance.SetValue(2, 999);
     }
 
     public void GameStart()
