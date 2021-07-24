@@ -111,6 +111,6 @@ public class Player : MonoSingleton<Player>
         MainSoundManager.Instance.SFXPlay("7 플레이어 사망", clip[2]); // 이거 코루틴으로 해야될 듯
         //애니매이션 추가 하는 코드가 들어갈 자리
         yield return new WaitForSeconds(0.5f);
-        SceneManager.LoadScene("Title");
+        GameOverScreenManager.Instance.GameOver();
     }
 }

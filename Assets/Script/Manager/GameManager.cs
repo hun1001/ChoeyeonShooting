@@ -68,6 +68,10 @@ public class GameManager : MonoSingleton<GameManager>
     public void AddScore(int add)
     {
         score += add;
+        if (score > PlayerPrefs.GetInt("Best"))
+        {
+            PlayerPrefs.SetInt("Best", score);
+        }
         MainTextManager.Instance.SetValue(1, score);
     }
 
