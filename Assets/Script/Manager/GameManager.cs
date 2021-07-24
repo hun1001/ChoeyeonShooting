@@ -27,6 +27,7 @@ public class GameManager : MonoSingleton<GameManager>
         StartCoroutine(SpawnEnemyTypeA());
         StartCoroutine(SpawnEnemyTypeB());
         StartCoroutine(SpawnEnemyTypeC());
+        StartCoroutine(SpawnEnemyTypeD());
     }
 
     private IEnumerator SpawnEnemyTypeA()
@@ -65,6 +66,21 @@ public class GameManager : MonoSingleton<GameManager>
             a = Instantiate(enemy[2], new Vector2(rand, 11), Quaternion.identity);
             a.transform.SetParent(null);
             yield return new WaitForSeconds(Random.Range(4f, 0.9f));
+        }
+    }
+
+    private IEnumerator SpawnEnemyTypeD()
+    {
+        float rand;
+        while (true)
+        {
+            rand = Random.Range(5, -5);
+            GameObject a = null;
+            a = Instantiate(enemy[3], new Vector2(rand, 11), Quaternion.identity);
+            a = Instantiate(enemy[3], new Vector2(rand+1.4f, 11), Quaternion.identity);
+            a = Instantiate(enemy[3], new Vector2(rand-1.4f, 11), Quaternion.identity);
+            a.transform.SetParent(null);
+            yield return new WaitForSeconds(Random.Range(4.4f, 1.4f));
         }
     }
 

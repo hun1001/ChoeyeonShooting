@@ -66,7 +66,7 @@ public class Player : MonoSingleton<Player>
             bullet = Instantiate(bulletPrefab[Body.bodyType], bulletPosition);
             bullet.transform.localScale = new Vector3(1.4f, 1.4f, 1);
             bullet.transform.SetParent(null);
-            yield return new WaitForSeconds(0.5f);
+            yield return new WaitForSeconds((Body.bodyType+1) * 0.25f);
         }
     }
 

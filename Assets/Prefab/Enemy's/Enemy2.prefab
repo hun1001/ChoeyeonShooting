@@ -140,5 +140,5 @@ MonoBehaviour:
   addScore: 200
   clipDead: {fileID: 8300000, guid: f573068cc1bdb57438c801635615cb82, type: 3}
   bulletPrefab: {fileID: 3589438567157354456, guid: 3a77343c2120bc5449b9a72ec0ec4b98, type: 3}
-  bulletDelay: 0.2
+  bulletDelay: 0.3
   fireClip: {fileID: 8300000, guid: cc7cbe5442787ba4db382aa894a3634a, type: 3}
