@@ -8,6 +8,7 @@ public class Engine : ItemMove
     {
         index = 2;
         value = 10;
+        h = 50;
     }
 
     new void Update()

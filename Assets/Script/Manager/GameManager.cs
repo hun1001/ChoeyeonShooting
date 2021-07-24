@@ -15,6 +15,7 @@ public class GameManager : MonoSingleton<GameManager>
 
     void Start()
     {
+        score = 0;
         MainTextManager.Instance.SetValue(1, score);
         maxPosition = new Vector2(5f, 9f);
         minPosition = new Vector2(-5f, -9f);
@@ -68,5 +69,10 @@ public class GameManager : MonoSingleton<GameManager>
     {
         score += add;
         MainTextManager.Instance.SetValue(1, score);
+    }
+
+    public int GetScore()
+    {
+        return score;
     }
 }

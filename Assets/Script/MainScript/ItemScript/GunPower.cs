@@ -8,6 +8,7 @@ public class GunPower : ItemMove
     {
         index = 0;
         value = 100;
+        h = 30;
     }
 
     new void Update()

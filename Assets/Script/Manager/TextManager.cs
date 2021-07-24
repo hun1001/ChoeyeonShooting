@@ -4,9 +4,9 @@ using UnityEngine.UI;
 public class TextManager : MonoSingleton<TextManager>
 {
     [SerializeField]
-    private Text[] text = null;
+    protected Text[] text = null;
 
-    private int[] figure = new int[3]; // 책읽은 순서대로
+    protected int[] figure = new int[3]; // 책읽은 순서대로
 
     protected void Start()
     {
@@ -28,11 +28,9 @@ public class TextManager : MonoSingleton<TextManager>
         UpdateUI(i, figure[i]);
     }
 
-    public void AddValue(int i,int add)
+    public void AddValue(int i, int a)
     {
-        figure[i] = figure[i] + add;
-        PlayerPrefs.SetInt("CYS" + i, figure[i]);
-        UpdateUI(i, figure[i]);
+        figure[i] += a;
+        UpdateUI(i, figure[2]);
     }
-
 }

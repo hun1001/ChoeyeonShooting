@@ -78,6 +78,7 @@ public class Player : MonoSingleton<Player>
         if (!isDamaged)
         {
             isDamaged = true;
+            MainSoundManager.Instance.SFXPlay("5 플레이어 피격", clip[1]);
             hp -= damage;
             MainTextManager.Instance.SetValue(0, hp);
             if (hp < 1)
@@ -101,7 +102,6 @@ public class Player : MonoSingleton<Player>
     {
         if (collision.CompareTag("Enemy"))
         {
-            MainSoundManager.Instance.SFXPlay("5 플레이어 피격", clip[1]);
             StartCoroutine(Damaged(20)); // 여기부분 수정해야됨
         }
     }

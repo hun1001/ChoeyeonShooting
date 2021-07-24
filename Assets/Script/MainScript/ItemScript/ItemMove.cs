@@ -14,13 +14,15 @@ public class ItemMove : MonoBehaviour
     protected int index = -1;
     protected int value = 100;
 
+    protected int h = 25;
+
     protected virtual void Update()
     {
         transform.Translate(Vector2.down * speed * Time.deltaTime);
         if (isDead == true)
         {
             Addres(index, value);
-            MainTextManager.Instance.AddValue(2, value);
+            MainTextManager.Instance.AddValue(2, h);
         }
     }
 
@@ -29,6 +31,7 @@ public class ItemMove : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             MainSoundManager.Instance.PlaySoundOther();
+            isDead = true;
             Destroy(gameObject);
         }
     }

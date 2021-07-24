@@ -8,6 +8,7 @@ public class Scrapt : ItemMove
     {
         index = 0;
         value = 100;
+        h = 25;
     }
 
     new void Update()
