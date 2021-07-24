@@ -137,7 +137,7 @@ MonoBehaviour:
   speed: 4
   hp: 8
   itemPref: {fileID: 2838756624175143809, guid: 7c28de7caacde484a90236f6db45b6e2, type: 3}
-  addScore: 200
+  addScore: 300
   clipDead: {fileID: 8300000, guid: f573068cc1bdb57438c801635615cb82, type: 3}
   bulletPrefab: {fileID: 3589438567157354456, guid: 3a77343c2120bc5449b9a72ec0ec4b98, type: 3}
   bulletDelay: 0.3
