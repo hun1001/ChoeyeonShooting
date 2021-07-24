@@ -39,7 +39,8 @@ public class Player : MonoSingleton<Player>
     {
         StartCoroutine(Fire());
         ChangeBody(Body.bodyType);
-        hp = (Body.bodyType + 1) * 100;
+        hp = (Body.bodyType + 1) * 100 + (WeaponA.wpAType + 1) * 5 + (WeaponB.wpBType + 1) * 5;
+        speed = ((3 - Body.bodyType) * 5) + ((3 - WeaponA.wpAType + 1) * 2) + ((3 - WeaponB.wpBType + 1) * 2);
         MainTextManager.Instance.SetValue(0, hp);
         MainTextManager.Instance.SetValue(2, item);
     }
@@ -57,11 +58,12 @@ public class Player : MonoSingleton<Player>
 
     private IEnumerator Fire()
     {
-        while (true)
+      
+        while (GameManager.Instance.GetisGameOver()==false)
         {
             GameObject bullet = null;
             MainSoundManager.Instance.SFXPlay("4 ตüรั", clip[0]);
-            bullet = Instantiate(bulletPrefab[0], bulletPosition);
+            bullet = Instantiate(bulletPrefab[Body.bodyType], bulletPosition);
             bullet.transform.localScale = new Vector3(1.4f, 1.4f, 1);
             bullet.transform.SetParent(null);
             yield return new WaitForSeconds(0.5f);
@@ -84,6 +86,7 @@ public class Player : MonoSingleton<Player>
             if (hp < 1)
             {
                 spriteRenderer.enabled = false;
+                GameManager.Instance.SetisGameOver(true);
                 StartCoroutine(GameOver());
             }
             for (int i = 0; i < 3; i++)
