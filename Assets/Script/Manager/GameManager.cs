@@ -90,6 +90,7 @@ public class GameManager : MonoSingleton<GameManager>
         score += add;
         if (score > bestScore)
         {
+            bestScore = score;
             PlayerPrefs.SetInt("Best", bestScore);
         }
         MainTextManager.Instance.SetValue(1, score);
