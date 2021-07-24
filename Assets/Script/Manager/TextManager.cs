@@ -33,4 +33,9 @@ public class TextManager : MonoSingleton<TextManager>
         figure[i] += a;
         UpdateUI(i, figure[2]);
     }
+
+    public int GetValue(int i)
+    {
+        return figure[i];
+    }
 }

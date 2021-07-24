@@ -29,8 +29,6 @@ public class GameManager : MonoSingleton<GameManager>
         StartCoroutine(SpawnEnemyTypeC());
     }
 
-
-
     private IEnumerator SpawnEnemyTypeA()
     {
         float rand;
@@ -74,7 +72,7 @@ public class GameManager : MonoSingleton<GameManager>
     {
         if (isGameOver) return;
         score += add;
-        if (score > PlayerPrefs.GetInt("Best"))
+        if (score > bestScore)
         {
             PlayerPrefs.SetInt("Best", bestScore);
         }
@@ -83,12 +81,7 @@ public class GameManager : MonoSingleton<GameManager>
 
     public int GetScore()
     {
-        return score;
-    }
-
-    public int GetBestScore()
-    {
-        return bestScore;
+        return score + MainTextManager.Instance.GetValue(2);
     }
 
     public bool GetisGameOver()
