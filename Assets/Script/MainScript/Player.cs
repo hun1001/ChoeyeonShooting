@@ -41,8 +41,8 @@ public class Player : MonoSingleton<Player>
         ChangeBody(Body.bodyType);
         hp = (Body.bodyType + 1) * 100 + (WeaponA.wpAType + 1) * 5 + (WeaponB.wpBType + 1) * 5;
         speed = ((3 - Body.bodyType) * 2) + ((3 - WeaponA.wpAType + 1) * 2) + ((3 - WeaponB.wpBType + 1) * 2);
-        MainTextManager.Instance.SetValue(0, hp);
-        MainTextManager.Instance.SetValue(2, item);
+        //MainTextManager.Instance.SetValue(0, hp);
+        //MainTextManager.Instance.SetValue(2, item);
     }
 
     void Update()
@@ -82,7 +82,7 @@ public class Player : MonoSingleton<Player>
             isDamaged = true;
             MainSoundManager.Instance.SFXPlay("5 플레이어 피격", clip[1]);
             hp -= damage;
-            MainTextManager.Instance.SetValue(0, hp);
+            //MainTextManager.Instance.SetValue(0, hp);
             if (hp < 1)
             {
                 spriteRenderer.enabled = false;

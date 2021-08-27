@@ -21,7 +21,7 @@ public class GameManager : MonoSingleton<GameManager>
     {
         isGameOver = false;
         score = 0;
-        MainTextManager.Instance.SetValue(1, score);
+        //MainTextManager.Instance.SetValue(1, score);
         maxPosition = new Vector2(5f, 9f);
         minPosition = new Vector2(-5f, -9f);
         StartCoroutine(SpawnEnemyTypeA());
@@ -91,14 +91,13 @@ public class GameManager : MonoSingleton<GameManager>
         if (score > bestScore)
         {
             bestScore = score;
-            PlayerPrefs.SetInt("Best", bestScore);
         }
-        MainTextManager.Instance.SetValue(1, score);
     }
 
     public int GetScore()
     {
-        return score + MainTextManager.Instance.GetValue(2);
+        //return score + MainTextManager.Instance.GetValue(2);
+        return 157;
     }
 
     public bool GetisGameOver()

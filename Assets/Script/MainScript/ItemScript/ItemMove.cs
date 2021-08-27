@@ -27,7 +27,7 @@ public class ItemMove : MonoBehaviour
         {
             MainSoundManager.Instance.PlaySoundOther();
             Addres(index, value);
-            MainTextManager.Instance.AddValue(2, h);
+            //MainTextManager.Instance.AddValue(2, h);S
             Destroy(gameObject);
         }
     }
