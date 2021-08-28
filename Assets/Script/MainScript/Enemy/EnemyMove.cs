@@ -68,6 +68,10 @@ public class EnemyMove : MonoBehaviour
                 Dead();
             }
         }
+        if (collision.gameObject.name.Contains("Boom"))
+        {
+            Dead();
+        }
     }
 
     protected virtual void Dead()
@@ -77,9 +81,12 @@ public class EnemyMove : MonoBehaviour
         MainSoundManager.Instance.SFXPlay("8 적 사망", clipDead);
         GameManager.Instance.AddScore(this.addScore);
         Destroy(gameObject);
-        item = Instantiate(itemPref, gameObject.transform.position, Quaternion.identity);
-        item.transform.position = new Vector2(transform.position.x, transform.position.y - 1); // 이거 아이템이 이상한데 스폰되는데 그거 고쳐야됨 버그 안고침
-        item.transform.SetParent(null);
+        if(Random.Range(0, 100)>=50)//아이템 드롭 확률
+        {
+            item = Instantiate(itemPref, gameObject.transform.position, Quaternion.identity);
+            item.transform.position = new Vector2(transform.position.x, transform.position.y - 1); // 이거 아이템이 이상한데 스폰되는데 그거 고쳐야됨 버그 안고침
+            item.transform.SetParent(null);
+        }
     }
 
     protected virtual void Bulletcheck()
