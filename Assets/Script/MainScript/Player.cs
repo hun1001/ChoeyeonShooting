@@ -47,7 +47,7 @@ public class Player : MonoSingleton<Player>
 
     void Update()
     {
-        if (Input.GetMouseButton(0) == true)
+        if (Input.GetMouseButton(0))
         {
             targetPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             targetPosition.x = Mathf.Clamp(targetPosition.x, GameManager.Instance.minPosition.x, GameManager.Instance.maxPosition.x);
