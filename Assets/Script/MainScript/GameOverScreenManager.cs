@@ -24,9 +24,8 @@ public class GameOverScreenManager : MonoSingleton<GameOverScreenManager>
 
     public void GameOver()
     {
-        bestScore = PlayerPrefs.GetInt("Best", 100);
-        Debug.Log(bestScore + " " + GameManager.Instance.GetScore());
-        overText.text = string.Format("BestScore\n{0}\nScore\n{1}", bestScore, GameManager.Instance.GetScore());
+        bestScore = 10000;
+        overText.text = string.Format("BestScore\n{0}\nScore\n{1}\n\nScr {2} Eng {3} Gp {4}", bestScore, GameManager.Instance.GetScore(), 10, 10, 10);
         gameOverUI.SetActive(true);
     }
 

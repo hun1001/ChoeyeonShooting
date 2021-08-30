@@ -19,9 +19,10 @@ public class GameManager : MonoSingleton<GameManager>
 
     void Start()
     {
+        
         isGameOver = false;
         score = 0;
-        //MainTextManager.Instance.SetValue(1, score);
+        MainTextManager.Instance.SetScoreText(score);
         maxPosition = new Vector2(5f, 9f);
         minPosition = new Vector2(-5f, -9f);
         StartCoroutine(SpawnEnemyTypeA());
@@ -77,8 +78,8 @@ public class GameManager : MonoSingleton<GameManager>
             rand = Random.Range(5, -5);
             GameObject a = null;
             a = Instantiate(enemy[3], new Vector2(rand, 11), Quaternion.identity);
-            a = Instantiate(enemy[3], new Vector2(rand+1.4f, 11), Quaternion.identity);
-            a = Instantiate(enemy[3], new Vector2(rand-1.4f, 11), Quaternion.identity);
+            a = Instantiate(enemy[3], new Vector2(rand + 1.4f, 11), Quaternion.identity);
+            a = Instantiate(enemy[3], new Vector2(rand - 1.4f, 11), Quaternion.identity);
             a.transform.SetParent(null);
             yield return new WaitForSeconds(Random.Range(4.4f, 1.4f));
         }
@@ -88,6 +89,7 @@ public class GameManager : MonoSingleton<GameManager>
     {
         if (isGameOver) return;
         score += add;
+        MainTextManager.Instance.SetScoreText(score);
         if (score > bestScore)
         {
             bestScore = score;
@@ -96,8 +98,7 @@ public class GameManager : MonoSingleton<GameManager>
 
     public int GetScore()
     {
-        //return score + MainTextManager.Instance.GetValue(2);
-        return 157;
+        return score;
     }
 
     public bool GetisGameOver()
@@ -109,4 +110,6 @@ public class GameManager : MonoSingleton<GameManager>
     {
         isGameOver = b;
     }
+
+    
 }

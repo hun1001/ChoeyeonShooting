@@ -408,9 +408,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1220103107}
+      - m_Target: {fileID: 1220103108}
         m_TargetAssemblyTypeName: GameOverScreenManager, Assembly-CSharp
-        m_MethodName: 
+        m_MethodName: LoadTitle
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -726,6 +726,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d81b4306ebe19944f94efc33ec94a714, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hp: {fileID: 1269937154}
+  score: {fileID: 1139470319}
 --- !u!4 &603758656
 Transform:
   m_ObjectHideFlags: 0
@@ -740,63 +742,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &644734400
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 8505903217467239128, guid: 2bdd61cb21051a8449686038341914ee, type: 3}
-      propertyPath: m_RootOrder
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 8505903217467239128, guid: 2bdd61cb21051a8449686038341914ee, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8505903217467239128, guid: 2bdd61cb21051a8449686038341914ee, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8505903217467239128, guid: 2bdd61cb21051a8449686038341914ee, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8505903217467239128, guid: 2bdd61cb21051a8449686038341914ee, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8505903217467239128, guid: 2bdd61cb21051a8449686038341914ee, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8505903217467239128, guid: 2bdd61cb21051a8449686038341914ee, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8505903217467239128, guid: 2bdd61cb21051a8449686038341914ee, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8505903217467239128, guid: 2bdd61cb21051a8449686038341914ee, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8505903217467239128, guid: 2bdd61cb21051a8449686038341914ee, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8505903217467239128, guid: 2bdd61cb21051a8449686038341914ee, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8505903217467239129, guid: 2bdd61cb21051a8449686038341914ee, type: 3}
-      propertyPath: m_Name
-      value: ControllerUI
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 2bdd61cb21051a8449686038341914ee, type: 3}
 --- !u!1 &737862273
 GameObject:
   m_ObjectHideFlags: 0
@@ -1669,6 +1614,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0fde08ee8bbd1b34796867251c407bc6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  user:
+    bestScore: 0
+    material:
+      scrapt: 0
+      gunPower: 0
+      engine: 0
 --- !u!1 &1865774044
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,1 +1,1 @@
-﻿{}
+﻿{"bestScore":0,"material":{"scrapt":0,"gunPower":0,"engine":0}}
