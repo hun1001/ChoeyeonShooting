@@ -11,7 +11,7 @@ public class EnemyMove : MonoBehaviour
     private bool isDead = false;
 
     [SerializeField]
-    protected GameObject itemPref = null;
+    protected GameObject[] itemPref;
 
     [SerializeField]
     protected int addScore = 200;
@@ -79,11 +79,24 @@ public class EnemyMove : MonoBehaviour
         GameObject item = null;
         isDead = true;
         MainSoundManager.Instance.SFXPlay("8 적 사망", clipDead);
+        int rand = Random.Range(0, 100);
         GameManager.Instance.AddScore(this.addScore);
         Destroy(gameObject);
-        if(Random.Range(0, 100)>=50)//아이템 드롭 확률
+        if (rand <= 30)//아이템 드롭 확률
         {
-            item = Instantiate(itemPref, gameObject.transform.position, Quaternion.identity);
+            item = Instantiate(itemPref[0], gameObject.transform.position, Quaternion.identity);
+            item.transform.position = new Vector2(transform.position.x, transform.position.y - 1); // 이거 아이템이 이상한데 스폰되는데 그거 고쳐야됨 버그 안고침
+            item.transform.SetParent(null);
+        }
+        else if(rand<=45)
+        {
+            item = Instantiate(itemPref[1], gameObject.transform.position, Quaternion.identity);
+            item.transform.position = new Vector2(transform.position.x, transform.position.y - 1); // 이거 아이템이 이상한데 스폰되는데 그거 고쳐야됨 버그 안고침
+            item.transform.SetParent(null);
+        }
+        else if(rand<=60)
+        {
+            item = Instantiate(itemPref[2], gameObject.transform.position, Quaternion.identity);
             item.transform.position = new Vector2(transform.position.x, transform.position.y - 1); // 이거 아이템이 이상한데 스폰되는데 그거 고쳐야됨 버그 안고침
             item.transform.SetParent(null);
         }

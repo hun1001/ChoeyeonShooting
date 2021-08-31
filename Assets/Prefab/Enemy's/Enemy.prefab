@@ -136,6 +136,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   hp: 6
-  itemPref: {fileID: 4249808072994885183, guid: 5f0a5796567ced2449bc5ae95b5c8ddd, type: 3}
+  itemPref:
+  - {fileID: 4249808072994885183, guid: 5f0a5796567ced2449bc5ae95b5c8ddd, type: 3}
+  - {fileID: 2838756624175143809, guid: 7c28de7caacde484a90236f6db45b6e2, type: 3}
+  - {fileID: 7921702677257509965, guid: 1f669025777153a4685a2e701f9a7ff4, type: 3}
   addScore: 150
   clipDead: {fileID: 8300000, guid: f573068cc1bdb57438c801635615cb82, type: 3}
