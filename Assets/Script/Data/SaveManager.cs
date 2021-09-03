@@ -3,13 +3,23 @@ using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 
-public class SaveManager : MonoBehaviour
+public class SaveManager : MonoSingleton<SaveManager>
 {
     [SerializeField]
     private User user = null;
 
+    public User CurrentUser
+    {
+        get
+        {
+            return user;
+        }
+    }
+
     private string SAVE_PATH = "";
     private string SAVE_FILENAME = "/SaveFile.txt";
+
+
 
     private void Awake()
     {
@@ -34,14 +44,10 @@ public class SaveManager : MonoBehaviour
         }
     }
 
-    private void SaveToJson()
+    public void SaveToJson()
     {
         string json = JsonUtility.ToJson(user);
         File.WriteAllText(SAVE_PATH + SAVE_FILENAME, json, System.Text.Encoding.UTF8);
     }
 
-    private void OnApplicationQuit()
-    {
-        SaveToJson();
-    }
 }

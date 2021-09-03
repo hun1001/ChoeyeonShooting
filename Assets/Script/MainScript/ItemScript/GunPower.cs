@@ -2,17 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GunPower : ItemMove
+public class GunPower : Scrapt
 {
-    void Start()
-    {
-        index = 0;
-        value = 100;
-        h = 30;
-    }
-
-    new void Update()
+    protected override void Update()
     {
         base.Update();
+    }
+
+    protected override void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+            MainSoundManager.Instance.PlaySoundOther();
+            SaveManager.Instance.CurrentUser.material.gunPower++;
+            Destroy(gameObject);
+        }
     }
 }

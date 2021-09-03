@@ -2,17 +2,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Scrapt : ItemMove
+public class Scrapt : MonoBehaviour
 {
-    void Start()
+    [SerializeField]
+    protected float speed = 3f;
+
+    protected virtual void Update()
     {
-        index = 0;
-        value = 100;
-        h = 25;
+        transform.Translate(Vector2.down * speed * Time.deltaTime);
     }
 
-    new void Update()
+    protected virtual void OnTriggerEnter2D(Collider2D collision)
     {
-        base.Update();
+        if (collision.CompareTag("Player"))
+        {
+            MainSoundManager.Instance.PlaySoundOther();
+            SaveManager.Instance.CurrentUser.material.scrapt++;
+            Destroy(gameObject);
+        }
     }
 }

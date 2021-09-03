@@ -14,7 +14,6 @@ public class GameOverScreenManager : MonoSingleton<GameOverScreenManager>
     [SerializeField]
     private GameObject gameOverUI;
 
-    private int bestScore = 100;
 
 
     private void Start()
@@ -24,8 +23,12 @@ public class GameOverScreenManager : MonoSingleton<GameOverScreenManager>
 
     public void GameOver()
     {
-        bestScore = 10000;
-        overText.text = string.Format("BestScore\n{0}\nScore\n{1}\n\nScr {2} Eng {3} Gp {4}", bestScore, GameManager.Instance.GetScore(), 10, 10, 10);
+        if (GameManager.Instance.score > SaveManager.Instance.CurrentUser.bestScore)
+        {
+            SaveManager.Instance.CurrentUser.bestScore = GameManager.Instance.score;
+        }
+        SaveManager.Instance.SaveToJson();
+        overText.text = string.Format("BestScore\n{0}\nScore\n{1}\n\nScr {2} Eng {3} Gp {4}", SaveManager.Instance.CurrentUser.bestScore, GameManager.Instance.GetScore(), 10, 10, 10);
         gameOverUI.SetActive(true);
     }
 

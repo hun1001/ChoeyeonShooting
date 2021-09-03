@@ -10,10 +10,8 @@ public class GameManager : MonoSingleton<GameManager>
     [SerializeField]
     private GameObject[] enemy = null;
 
-    [SerializeField]
-    private int score = 0;
+    public int score = 0;
 
-    private int bestScore = 0;
 
     private bool isGameOver = false;
 
@@ -74,10 +72,6 @@ public class GameManager : MonoSingleton<GameManager>
         if (isGameOver) return;
         score += add;
         MainTextManager.Instance.SetScoreText(score);
-        if (score > bestScore)
-        {
-            bestScore = score;
-        }
     }
 
     public int GetScore()
@@ -95,5 +89,6 @@ public class GameManager : MonoSingleton<GameManager>
         isGameOver = b;
     }
 
+  
     
 }
