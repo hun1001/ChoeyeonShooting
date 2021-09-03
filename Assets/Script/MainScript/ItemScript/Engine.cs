@@ -14,7 +14,8 @@ public class Engine : Scrapt
         if (collision.CompareTag("Player"))
         {
             MainSoundManager.Instance.PlaySoundOther();
-            SaveManager.Instance.CurrentUser.material.engine++;
+            //SaveManager.Instance.CurrentUser.material.engine++;
+            ItemManager.Instance.engine++;
             Destroy(gameObject);
         }
     }

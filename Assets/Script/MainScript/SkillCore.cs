@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class SkillCore : MonoBehaviour
 {
@@ -10,7 +11,7 @@ public class SkillCore : MonoBehaviour
 
     public void ActSkill()
     {
-        if(active)
+        if (active)
         {
             Instantiate(core, new Vector3(0, -15, 2), Quaternion.identity);
             StartCoroutine(Cool());

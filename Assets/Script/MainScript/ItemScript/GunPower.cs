@@ -14,7 +14,8 @@ public class GunPower : Scrapt
         if (collision.CompareTag("Player"))
         {
             MainSoundManager.Instance.PlaySoundOther();
-            SaveManager.Instance.CurrentUser.material.gunPower++;
+            //SaveManager.Instance.CurrentUser.material.gunPower++;
+            ItemManager.Instance.gunPower++;
             Destroy(gameObject);
         }
     }

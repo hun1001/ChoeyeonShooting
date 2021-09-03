@@ -23,12 +23,16 @@ public class GameOverScreenManager : MonoSingleton<GameOverScreenManager>
 
     public void GameOver()
     {
-        if (GameManager.Instance.score > SaveManager.Instance.CurrentUser.bestScore)
+        //if (GameManager.Instance.score > SaveManager.Instance.CurrentUser.bestScore)
+        //{
+        //    SaveManager.Instance.CurrentUser.bestScore = GameManager.Instance.score;
+        //}
+        //SaveManager.Instance.SaveToJson();
+        if (GameManager.Instance.GetScore() > PlayerPrefs.GetInt("best"))
         {
-            SaveManager.Instance.CurrentUser.bestScore = GameManager.Instance.score;
+            PlayerPrefs.SetInt("best", GameManager.Instance.GetScore());
         }
-        SaveManager.Instance.SaveToJson();
-        overText.text = string.Format("BestScore\n{0}\nScore\n{1}\n\nScr {2} Eng {3} Gp {4}", SaveManager.Instance.CurrentUser.bestScore, GameManager.Instance.GetScore(), 10, 10, 10);
+        overText.text = string.Format("BestScore\n{0}\nScore\n{1}\n\nScr {2} Eng {3} Gp {4}", PlayerPrefs.GetInt("best"), GameManager.Instance.GetScore(), ItemManager.Instance.scrapt, ItemManager.Instance.engine, ItemManager.Instance.gunPower);
         gameOverUI.SetActive(true);
     }
 

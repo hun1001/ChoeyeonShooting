@@ -17,7 +17,8 @@ public class Scrapt : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             MainSoundManager.Instance.PlaySoundOther();
-            SaveManager.Instance.CurrentUser.material.scrapt++;
+            //SaveManager.Instance.CurrentUser.material.scrapt++;
+            ItemManager.Instance.scrapt++;
             Destroy(gameObject);
         }
     }
