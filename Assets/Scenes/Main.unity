@@ -1500,6 +1500,10 @@ MonoBehaviour:
       scrapt: 10
       gunPower: 10
       engine: 10
+    upgrade:
+      bodyUpgrade: 0
+      wpaUpgrade: 0
+      wpbUpgrade: 0
 --- !u!4 &1631903427
 Transform:
   m_ObjectHideFlags: 0
