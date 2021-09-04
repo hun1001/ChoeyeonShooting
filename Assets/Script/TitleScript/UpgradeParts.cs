@@ -35,6 +35,7 @@ public class UpgradeParts : MonoSingleton<UpgradeParts>
     {
         TitleItemManager.Instance.gunPower -= 10 + (wpaUp / 2);
         TitleTextManager.Instance.UpdateUI();
+        WeaponA.state = 1;
         wpaText.text = string.Format("{0}",i);
     }
 
@@ -42,6 +43,7 @@ public class UpgradeParts : MonoSingleton<UpgradeParts>
     {
         TitleItemManager.Instance.scrapt -= 10+(wpaUp/2);
         TitleTextManager.Instance.UpdateUI();
+        Body.state = 1;
         bodyText.text = string.Format("{0}", i);
     }
 
@@ -49,6 +51,7 @@ public class UpgradeParts : MonoSingleton<UpgradeParts>
     {
         TitleItemManager.Instance.gunPower -= 10 + (wpaUp / 2);
         TitleTextManager.Instance.UpdateUI();
+        WeaponB.state = 1;
         wpbText.text = string.Format("{0}", i);
     }
 }

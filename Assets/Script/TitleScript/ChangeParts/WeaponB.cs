@@ -5,6 +5,7 @@ using UnityEngine;
 public class WeaponB : ChangeImage
 {
     public static int wpBType;
+    public static int state;
     new void Awake()
     {
         base.Awake();

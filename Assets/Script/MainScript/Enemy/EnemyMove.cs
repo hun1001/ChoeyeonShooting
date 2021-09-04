@@ -22,6 +22,8 @@ public class EnemyMove : MonoBehaviour
     private SpriteRenderer spriteRenderer = null;
 
     private GameObject bul = null;
+
+    private int num = 1; //이것도 임시 변수 나중에 지울꺼 영상속에서 사기를 치기 위한 변수 부품.state도 사기치기 위한 임시 변수임
     private void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -104,17 +106,21 @@ public class EnemyMove : MonoBehaviour
 
     protected virtual void Bulletcheck()
     {
+        if ((Body.state > 1) && (WeaponA.state > 1) && (WeaponB.state > 1))
+        {
+            num = 10;
+        }
         if (bul.name.Contains("BulletTypeA"))
         {
-            hp -= 2;
+            hp -= 2 * num;
         }
         else if (bul.name.Contains("laser_bullet_0"))
         {
-            hp -= 6;
+            hp -= 6 * num;
         }
         else if (bul.name.Contains("missile"))
         {
-            hp -= 4;
+            hp -= 4 * num;
         }
     }
 
