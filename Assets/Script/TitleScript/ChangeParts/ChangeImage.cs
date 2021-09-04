@@ -17,13 +17,21 @@ public class ChangeImage : MonoBehaviour
 
     protected virtual void ChangeImg()
     {
-        TitleSoundManager.Instance.PlaySoundOther();
-        type++;
-        if (type > 2)
+        if (!UpgradeParts.Instance.GetInputUpgrade())
         {
-            type = 0;
+            TitleSoundManager.Instance.PlaySoundOther();
+            type++;
+            if (type > 2)
+            {
+                type = 0;
+            }
+            spriteRenderer.sprite = sprite[type];
         }
-        spriteRenderer.sprite = sprite[type];
+        else
+        {
+            TitleSoundManager.Instance.PlaySoundOther();
+            UpgradeParts.Instance.setbodyText(++UpgradeParts.Instance.bodyUp);
+        }
     }
 
 

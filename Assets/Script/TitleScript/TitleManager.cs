@@ -9,6 +9,8 @@ public class TitleManager : MonoSingleton<TitleManager>
     [SerializeField]
     private AudioClip clip;
 
+
+
     private void Awake()
     {
         title = GameObject.Find("Title");
