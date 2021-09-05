@@ -38,6 +38,7 @@ public class GameOverScreenManager : MonoSingleton<GameOverScreenManager>
 
     public void LoadTitle()
     {
+        Time.timeScale = 1;
         SceneManager.LoadScene("Title");
     }
 

@@ -111,5 +111,13 @@ public class Player : MonoSingleton<Player>
         //애니매이션 추가 하는 코드가 들어갈 자리
         yield return new WaitForSeconds(0.5f);
         GameOverScreenManager.Instance.GameOver();
+        float scale = 1f;
+        while (Time.timeScale> 0)//죽었을때 움직임 멈춤
+        {
+            scale *= 0.7f;
+            if (scale < 0.1f) scale = 0;
+            Time.timeScale = scale;
+            yield return new WaitForSeconds(0.1f);
+        }
     }
 }

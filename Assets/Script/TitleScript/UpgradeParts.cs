@@ -33,22 +33,29 @@ public class UpgradeParts : MonoSingleton<UpgradeParts>
 
     public void setWpaText(int i)
     {
-        TitleItemManager.Instance.gunPower -= 10 + (wpaUp / 2);
-        TitleTextManager.Instance.UpdateUI();
-        WeaponA.state = 1;
-        wpaText.text = string.Format("{0}",i);
+        if(TitleItemManager.Instance.gunPower>= 10 + (wpaUp / 2)&&wpaUp<=99)
+        {
+            TitleItemManager.Instance.gunPower -= 10 + (wpaUp / 2);
+            TitleTextManager.Instance.UpdateUI();
+            WeaponA.state = 1;
+            wpaText.text = string.Format("{0}", i);
+        }
     }
 
     public void setbodyText(int i)
     {
-        TitleItemManager.Instance.scrapt -= 10+(wpaUp/2);
-        TitleTextManager.Instance.UpdateUI();
-        Body.state = 1;
-        bodyText.text = string.Format("{0}", i);
+        if(TitleItemManager.Instance.scrapt>= 10 + (bodyUp / 2) && bodyUp<=99)
+        {
+            TitleItemManager.Instance.scrapt -= 10 + (bodyUp / 2);
+            TitleTextManager.Instance.UpdateUI();
+            Body.state = 1;
+            bodyText.text = string.Format("{0}", i);
+        }    
     }
 
     public void setWpbText(int i)
     {
+        if(TitleItemManager.Instance.gunPower>= 10 + (wpaUp / 2)&&wpaUp<=99)
         TitleItemManager.Instance.gunPower -= 10 + (wpaUp / 2);
         TitleTextManager.Instance.UpdateUI();
         WeaponB.state = 1;
