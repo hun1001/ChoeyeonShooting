@@ -33,11 +33,15 @@ public class GameManager : MonoSingleton<GameManager>
         float rand;
         while(true)
         {
+            if (!isGameOver)
+                break;
             rand = Random.Range(5, -5);
             GameObject a = null;
             a = Instantiate(enemy[0], new Vector2(rand, 11), Quaternion.identity);
             a.transform.SetParent(null);
             yield return new WaitForSeconds(Random.Range(2f, 0.5f));
+            if (!isGameOver)
+                break;
         }      
     }
 
@@ -46,6 +50,8 @@ public class GameManager : MonoSingleton<GameManager>
         float rand;
         while (true)
         {
+            if (!isGameOver)
+                break;
             rand = Random.Range(9, 2);
             GameObject a = null;
             a = Instantiate(enemy[1], new Vector2(6, rand), Quaternion.identity);
@@ -59,11 +65,13 @@ public class GameManager : MonoSingleton<GameManager>
         float rand;
         while (true)
         {
+            if (!isGameOver)
+                break;
             rand = Random.Range(5, -5);
             GameObject a = null;
             a = Instantiate(enemy[2], new Vector2(rand, 11), Quaternion.identity);
             a.transform.SetParent(null);
-            yield return new WaitForSeconds(Random.Range(4f, 0.9f));
+            yield return new WaitForSeconds(Random.Range(4f, 0.9f));  
         }
     }
 

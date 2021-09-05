@@ -23,9 +23,6 @@ public class Player : MonoSingleton<Player>
     [SerializeField]
     private int hp = 100;
 
-    [SerializeField]
-    private int item = 0;
-
     private bool isDamaged = false;
     [SerializeField]
     private AudioClip[] clip;
