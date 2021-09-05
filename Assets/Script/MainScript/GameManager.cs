@@ -10,6 +10,9 @@ public class GameManager : MonoSingleton<GameManager>
     [SerializeField]
     private GameObject[] enemy = null;
 
+    [SerializeField]
+    private GameObject bossPref = null;
+
     public int score = 0;
 
 
@@ -17,15 +20,28 @@ public class GameManager : MonoSingleton<GameManager>
 
     void Start()
     {
-        
+
         isGameOver = false;
         score = 0;
         MainTextManager.Instance.SetScoreText(score);
         maxPosition = new Vector2(5f, 9f);
         minPosition = new Vector2(-5f, -9f);
-        StartCoroutine(SpawnEnemyTypeA());
-        StartCoroutine(SpawnEnemyTypeB());
-        StartCoroutine(SpawnEnemyTypeC());
+        if (CheckBoss.isBoss==true)
+        {
+            SpawnBoss();
+        }
+        else if (CheckBoss.isBoss == false)
+        {
+            StartCoroutine(SpawnEnemyTypeA());
+            StartCoroutine(SpawnEnemyTypeB());
+            StartCoroutine(SpawnEnemyTypeC());
+        }
+    }
+
+    private void SpawnBoss()
+    {
+        GameObject boss = null;
+        boss = Instantiate(bossPref, new Vector2(0, 7), Quaternion.identity);
     }
 
     private IEnumerator SpawnEnemyTypeA()
@@ -33,15 +49,11 @@ public class GameManager : MonoSingleton<GameManager>
         float rand;
         while(true)
         {
-            if (!isGameOver)
-                break;
             rand = Random.Range(5, -5);
             GameObject a = null;
             a = Instantiate(enemy[0], new Vector2(rand, 11), Quaternion.identity);
             a.transform.SetParent(null);
             yield return new WaitForSeconds(Random.Range(2f, 0.5f));
-            if (!isGameOver)
-                break;
         }      
     }
 
@@ -50,8 +62,6 @@ public class GameManager : MonoSingleton<GameManager>
         float rand;
         while (true)
         {
-            if (!isGameOver)
-                break;
             rand = Random.Range(9, 2);
             GameObject a = null;
             a = Instantiate(enemy[1], new Vector2(6, rand), Quaternion.identity);
@@ -65,8 +75,6 @@ public class GameManager : MonoSingleton<GameManager>
         float rand;
         while (true)
         {
-            if (!isGameOver)
-                break;
             rand = Random.Range(5, -5);
             GameObject a = null;
             a = Instantiate(enemy[2], new Vector2(rand, 11), Quaternion.identity);
@@ -96,7 +104,4 @@ public class GameManager : MonoSingleton<GameManager>
     {
         isGameOver = b;
     }
-
-  
-    
 }

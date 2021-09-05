@@ -7,6 +7,8 @@ public class TitleTextManager : MonoSingleton<TitleTextManager>
 {
     [SerializeField]
     protected Text[] text = null;
+    [SerializeField]
+    private Text isBoss = null;
 
     private void Start()
     {
@@ -18,5 +20,6 @@ public class TitleTextManager : MonoSingleton<TitleTextManager>
         text[0].text = string.Format("{0}", TitleItemManager.Instance.scrapt);
         text[1].text = string.Format("{0}", TitleItemManager.Instance.gunPower);
         text[2].text = string.Format("{0}", TitleItemManager.Instance.engine);
+        isBoss.text = string.Format("{0}", CheckBoss.isBoss);
     }
 }
