@@ -106,7 +106,7 @@ public class BossMove : MonoBehaviour
         }
         if (collision.gameObject.name.Contains("Boom"))
         {
-            Dead();
+            hp -= 30;
         }
     }
 

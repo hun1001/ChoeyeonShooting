@@ -22,7 +22,7 @@ public class Boom : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D enemy)
     {
-        if (enemy.tag.Contains("Enemy"))
+        if (enemy.tag.Contains("Enemy")&&!enemy.name.Contains("Boss"))
         {
             Destroy(enemy.gameObject);
         }
