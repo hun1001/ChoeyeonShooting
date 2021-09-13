@@ -81,7 +81,7 @@ public class BossMove : MonoBehaviour
             phase2 = true;
             spriteRenderer.sprite = change;
             gameObject.transform.localScale = new Vector3(0.75f, 0.75f, 1);
-            hp += 50;
+            hp += 250;
         }
     }
 

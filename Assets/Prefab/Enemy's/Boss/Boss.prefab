@@ -162,7 +162,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0
-  hp: 200
+  hp: 500
   bulletPrefab: {fileID: 3589438567157354456, guid: 3a77343c2120bc5449b9a72ec0ec4b98, type: 3}
   bulletDelay: 0.5
   itemPref: []
